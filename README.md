@@ -15,14 +15,14 @@ Parse the given user agent string. Returns an object containing browser details 
 #### Examples
 
 ```js
-var UAParser = require('uas-parser');
+var UASParser = require('uas-parser');
 
 var cacheDir = __dirname + "/cache/";
 var updateInterval = 0;
 var automaticUpdate = false;
-var uaParser = new UASParser(cacheDir, updateInterval, automaticUpdate)
+var uasParser = new UASParser(cacheDir, updateInterval, automaticUpdate)
 
-uaParser.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.17 (KHTML, like Gecko) Version/6.0.2 Safari/536.26.17');
+uasParser.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.17 (KHTML, like Gecko) Version/6.0.2 Safari/536.26.17');
 // { type: 'Browser',
 //   uaFamily: 'Safari',
 //   uaName: 'Safari 6.0.2',
@@ -41,7 +41,7 @@ uaParser.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.2
 //   deviceIcon: 'http://user-agent-string.info/pub/img/device/desktop.png',
 //   deviceInfoUrl: 'http://user-agent-string.info/list-of-ua/device-detail?device=Personal computer' }
 
-uaParser.parse('Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)');
+uasParser.parse('Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)');
 // { type: 'Robot',
 //   uaFamily: 'bingbot',
 //   uaName: 'bingbot/2.0',
@@ -60,7 +60,7 @@ uaParser.parse('Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingb
 //   deviceIcon: 'http://user-agent-string.info/pub/img/device/other.png',
 //   deviceInfoUrl: 'http://user-agent-string.info/list-of-ua/device-detail?device=Other' }
 
-uaParser.parse('EventMachine HttpClient');
+uasParser.parse('EventMachine HttpClient');
 // { type: 'Library',
 //   uaFamily: 'EventMachine',
 //   uaName: 'EventMachine',
