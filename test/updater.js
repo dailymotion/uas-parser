@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 require('chai').should();
 
 var async = require('async'),
@@ -14,7 +16,7 @@ describe('updater', function() {
 
     async.times(5, function(id, callback) {
       var updateInterval = 1 * 24 * 60 * 60 * 1000; // 1 day
-      new Updater(updateInterval, function() {
+      new Updater(path.resolve(__dirname, '..', 'data', 'uasdata.ini'), updateInterval, function() {
         callback(null);
       });
     }, function() {

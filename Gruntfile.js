@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-mocha-test');
@@ -33,7 +35,7 @@ module.exports = function(grunt) {
     var Updater = require('./lib/updater');
 
     var updateInterval = 1 * 24 * 60 * 60 * 1000; // 1 day
-    new Updater(updateInterval, function(error) {
+    new Updater(path.resolve(__dirname, 'data', 'uasdata.ini'), updateInterval, function(error) {
       done(error);
     });
   });

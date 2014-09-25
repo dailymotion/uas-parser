@@ -15,7 +15,12 @@ Parse the given user agent string. Returns an object containing browser details 
 #### Examples
 
 ```js
-var uaParser = require('uas-parser');
+var UAParser = require('uas-parser');
+
+var cacheDir = __dirname + "/cache/";
+var updateInterval = 0;
+var automaticUpdate = false;
+var uaParser = new UASParser(cacheDir, updateInterval, automaticUpdate)
 
 uaParser.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.17 (KHTML, like Gecko) Version/6.0.2 Safari/536.26.17');
 // { type: 'Browser',

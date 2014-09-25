@@ -2,7 +2,8 @@
 
 require('chai').should();
 
-var uasParser = require('../');
+var UASParser = require('../');
+var uasParser = new UASParser();
 
 describe('parse', function() {
   it('parses a browser', function() {
@@ -19,7 +20,7 @@ describe('parse', function() {
     ua.uaInfoUrl.should.eql('http://user-agent-string.info/list-of-ua/browser-detail?browser=Safari');
     ua.osFamily.should.eql('OS X');
     ua.osName.should.eql('OS X 10.7 Lion');
-    ua.osUrl.should.eql('http://www.apple.com/osx/');
+    ua.osUrl.should.eql('http://en.wikipedia.org/wiki/Mac_OS_X_Lion');
     ua.osCompany.should.eql('Apple Computer, Inc.');
     ua.osCompanyUrl.should.eql('http://www.apple.com/');
     ua.osIcon.should.eql('http://user-agent-string.info/pub/img/os/macosx.png');
