@@ -68,11 +68,11 @@ _.extend(UASParser.prototype, {
     }
     this.iniFilePath = path.resolve(this.cacheDirectory, 'uasdata.ini');
 
-    if (updateInterval) {
+    if (updateInterval !== undefined) {
       this.updateInterval = updateInterval;
     }
 
-    if (doDownloads) {
+    if (doDownloads !== undefined) {
       this.doDownloads = !!doDownloads;
     }
 
